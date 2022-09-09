@@ -19,7 +19,7 @@
   <img src="https://user-images.githubusercontent.com/107196231/189176706-ff5e5677-f5b1-46f3-831e-38fea3c6dcdb.png">
 </p>
 
-È infatti proprio questo il cuore del programma: grazie a queste regole possiamo definire il valore della mancia attraverso AND, OR e NOT:
+È infatti proprio questo il cuore del programma: grazie a queste regole possiamo definire il valore della mancia attraverso **AND**, **OR** e **NOT**:
 ## Regola 1
   La regola 1 è la seguente: 
   <p align="center">
@@ -27,7 +27,7 @@
 </p>
   Il funzionamento è piuttosto semplice, in quanto Mamdani permette l'impiego di termini molto vicini al linguaggio umano.
   
-  La regola 1 riporta: SE la qualità del cibo è scarsa OPPURE la qualità del servizio è scarsa ALLORA la mancia sarà bassa.
+  La regola 1 riporta: **SE** la qualità del cibo è scarsa **OPPURE** la qualità del servizio è scarsa **ALLORA** la mancia sarà bassa.
 
 ## Regola 2
   La regola 2 è la seguente: 
@@ -43,6 +43,38 @@
 </p>
   La regola 3 riporta: SE la qualità del cibo è ottima OPPURE la qualità del servizio è ottima ALLORA la mancia sarà alta.
 
+# Spiegazione codice
+
+**FuzzySystem()** : creazione di un nuovo sistema fuzzy che potrà contenere variabili e regole.
+
+**AutoTriangle(n_sets, terms,universe_of_discourse, verbose=False)** : crea una nuova variabile linguistica. Richiede almeno tre parametri:
+
+1. n_sets - il numero di insiemi sfocati nei quali il dominio degli elementi deve essere suddiviso.
+2. terms - lista di stringhe che contengono i termini da usare negli insiemi sfocati.
+3. universe_of_discourse - una lista di due elementi che specificano il minimo e il massimo valore del dominio.
+
+**add_linguistic_variable(name, LV, verbose=False)** : aggiunge una variabile linguistica al sistema fuzzy. Richiede almeno 2 parametri:
+
+1. name - stringa che contiene il nome della variabile linguistica.
+2. LV - oggetto variabile linguistica da aggiungere al sistema fuzzy. 
+
+**TriangleFuzzySet(a, b, c, term)** : crea un insieme sfocato triangolare. Richiede almeno 4 parametri: 
+
+1. a - coordinate del dominio del vertice superiore sinistro.
+2. b - coordinate del dominio del vertice superiore.
+3. c - coordinate del dominio del vertice superiore destro.
+4. term - stringa che rappresenta il termine da associare all'insieme sfocato.
+
+**add_rules(rules, verbose=False)** : aggiunge le regole fuzzy al sistema fuzzy. Richiede almeno 1 parametro:
+
+1. rules - lista delle regole da aggiungere. Devono essere specificate come stringhe, rispettando la sintassi di Simpful.
+
+**set_variable(name,value, verbose=False)** : Assegna il valore numerico ad una variabile linguistica. Richiede almeno 2 parametri:
+
+1. name - nome della variabile a cui assegnare il valore.
+2. value - valore numerico da assegnare.
+
+**inference()** : esegue l'inferenza fuzzy di Mamdani.
 
 # Diritti d'autore
   Spolaor S., Fuchs C., Cazzaniga P., Kaymak U., Besozzi D., Nobile M.S.: Simpful: a user-friendly Python library for fuzzy logic, International Journal of Computational Intelligence Systems, 13(1):1687–1698, 2020
