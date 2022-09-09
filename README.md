@@ -43,7 +43,7 @@
 </p>
   La regola 3 riporta: SE la qualità del cibo è ottima OPPURE la qualità del servizio è ottima ALLORA la mancia sarà alta.
 
-# Spiegazione codice
+# Code Explanation
 
 **FuzzySystem()** : creazione di un nuovo sistema fuzzy che potrà contenere variabili e regole.
 
